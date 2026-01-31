@@ -1,176 +1,140 @@
-SentinelMesh
+# SentinelMesh
 
-SentinelMesh is an IoT Trust, Reliability, and Data Quality Engine built on top of real LoRaWAN telemetry.
-Instead of focusing only on sensor values, SentinelMesh evaluates how much the data itself can be trusted.
+**SentinelMesh** is an IoT **Trust, Reliability, and Data Quality Engine** built on top of real LoRaWAN telemetry.  
+Instead of focusing only on sensor values, SentinelMesh evaluates **how much the data itself can be trusted**.
 
 It is designed for:
+- IoT operations teams  
+- Network engineers  
+- Infrastructure and facilities monitoring  
+- Reliability and maintenance planning  
 
-IoT operations teams
+---
 
-Network engineers
-
-Infrastructure and facilities monitoring
-
-Reliability and maintenance planning
-
-Why SentinelMesh?
+## Why SentinelMesh?
 
 Most IoT dashboards answer:
 
-“What is the sensor reading?”
+> “What is the sensor reading?”
 
 SentinelMesh answers:
 
-“Should I trust this sensor, this gateway, and this data?”
+> “Should I trust this sensor, this gateway, and this data?”
 
 The system analyzes:
+- Telemetry consistency  
+- RF stability  
+- Confidence trends over time  
+- Data completeness  
+- Gateway reliability  
+- Maintenance risk  
 
-Telemetry consistency
+All insights are derived **strictly from observed data** — no assumptions, no hallucinations.
 
-RF stability
+---
 
-Confidence trends over time
+## Core Capabilities
 
-Data completeness
-
-Gateway reliability
-
-Maintenance risk
-
-All insights are derived strictly from observed data — no assumptions, no hallucinations.
-
-Core Capabilities
-1. Unified Telemetry Normalization
-
+### Unified Telemetry Normalization
 Raw LoRaWAN uplinks from multiple vendors are normalized into a single, consistent event schema:
+- Device metadata  
+- Measurements  
+- RF metrics (RSSI, SNR)  
+- Network parameters  
+- Confidence inputs  
 
-Device metadata
+---
 
-Measurements
-
-RF metrics (RSSI, SNR)
-
-Network parameters
-
-Confidence inputs
-
-2. Confidence & Trust Scoring
-
+### Confidence & Trust Scoring
 Each event is assigned a confidence score based on:
-
-Missing or incomplete telemetry
-
-RF quality and stability
-
-Network behavior (frame counters, ADR)
+- Missing or incomplete telemetry  
+- RF quality and stability  
+- Network behavior (frame counters, ADR)  
 
 Confidence trends are tracked over time per device.
 
-3. Automated Insights Engine
+---
 
+### Automated Insights Engine
 SentinelMesh automatically detects and explains:
-
-Devices with poor battery telemetry
-
-Degrading confidence over time
-
-Incomplete or unreliable telemetry
-
-Devices that are unreliable despite good RF
+- Devices with poor battery telemetry  
+- Degrading confidence over time  
+- Incomplete or unreliable telemetry  
+- Devices that are unreliable despite good RF  
 
 All insights are explainable and reproducible.
 
-4. Gateway Reliability Analysis
+---
 
+### Gateway Reliability Analysis
 Gateways are analyzed for:
-
-Average confidence of traffic handled
-
-RSSI variance (RF instability)
-
-Event volume
+- Average confidence of traffic handled  
+- RSSI variance (RF instability)  
+- Event volume  
 
 This allows identification of unstable or degraded gateways affecting multiple devices.
 
-5. Predictive Maintenance Scoring
+---
 
+### Predictive Maintenance Scoring
 Devices are ranked by maintenance risk using:
-
-Battery reporting quality
-
-Confidence degradation
-
-RF instability
-
-Data completeness
+- Battery reporting quality  
+- Confidence degradation  
+- RF instability  
+- Data completeness  
 
 This supports preventive maintenance instead of reactive alerts.
 
-6. Trust Replay (Time Flow)
+---
 
+### Trust Replay (Time Flow)
 A replay interface allows users to:
+- Scrub through time  
+- Observe confidence changes  
+- See when devices or gateways began degrading  
+- Perform operational forensics  
 
-Scrub through time
+---
 
-Observe confidence changes
-
-See when devices or gateways began degrading
-
-Perform operational forensics
-
-7. Interactive Query Interface
-
+### Interactive Query Interface
 Users can ask supported, data-backed questions, such as:
-
-What devices exist?
-
-What devices are faulty?
-
-Which gateway does Door Sensor 08 use?
-
-When was the last data received from Temp Sensor 03?
-
-Where is Temp Sensor 03?
-
-Which gateways are unstable?
+- What devices exist?  
+- What devices are faulty?  
+- Which gateway does Door Sensor 08 use?  
+- When was the last data received from Temp Sensor 03?  
+- Where is Temp Sensor 03?  
+- Which gateways are unstable?  
 
 Only questions that can be answered from the dataset are supported.
 
-Example Questions Supported
+---
 
-What devices exist?
+## Example Questions Supported
+- What devices exist?  
+- What gateways exist?  
+- What devices are faulty?  
+- Which gateway does Door Sensor 08 use?  
+- When was the last data received from Temp Sensor 03?  
+- Where is Temp Sensor 03?  
+- How many messages has Temp Sensor 03 sent?  
+- Which gateways are unstable?  
+- Which device needs maintenance?  
 
-What gateways exist?
+---
 
-What devices are faulty?
-
-Which gateway does Door Sensor 08 use?
-
-When was the last data received from Temp Sensor 03?
-
-Where is Temp Sensor 03?
-
-How many messages has Temp Sensor 03 sent?
-
-Which gateways are unstable?
-
-Which device needs maintenance?
-
-Tech Stack
-
-Python
-
-Streamlit – interactive dashboard
-
-Pandas – data processing
-
-Altair – analytical plotting
-
-JSONL – event storage
+## Tech Stack
+- Python  
+- Streamlit – interactive dashboard  
+- Pandas – data processing  
+- Altair – analytical plotting  
+- JSONL – event storage  
 
 No external services, no ML dependencies, no cloud lock-in.
 
-Project Structure
+---
+
+## Project Structure
+
 dataset/
 ├── app.py                    # Streamlit application
 ├── engine.py                 # Core analytics & metrics
@@ -179,7 +143,7 @@ dataset/
 ├── logo.png                  # SentinelMesh logo
 └── README.md
 
-How to Run
+## How to Run
 1. Install dependencies
 pip install streamlit pandas altair
 
